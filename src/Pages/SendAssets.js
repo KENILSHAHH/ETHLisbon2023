@@ -250,8 +250,24 @@ export default function SendAssets() {
   const handleCurrencyChange = (event) => {
     setSelectedCurrency(event.target.value);
   };
-  async function sendAssets() {
+  async function sendAssets(event) {
     window.alert('Sending 0.265 eth to users preferred address on base goerli');
+        event.preventDefault();
+   
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
+    const signer = await provider.getSigner();
+    const contract = new ethers.Contract(
+      '0x9684E0642EDad90Fc5ghhj56f564f2FC99F43',
+      preferenceAbi,
+      signer
+    );
+    const txn = await contract.sendAssetsCrosasChain(
+      '0x50D146d26A40721FcE72bcF0AE95d56f5D4Aa7c0',
+      preferredChain,
+      toAddress,amount
+    );
   }
   const deployContract = async (event) => {
     event.preventDefault();
@@ -337,7 +353,7 @@ export default function SendAssets() {
                 className="px-3 py-2 bg-blue-500 text-white rounded-md">
                 Get live conversion to ETH
               </button>
-              {oracle && <h1>0.265ETH</h1>}
+              {oracle && <h1>{currentAmount/{livePriceFeed} }</h1>}
               <button
                 onClick={sendAssets}
                 className="px-3 py-2 bg-green-500 text-white rounded-md">
