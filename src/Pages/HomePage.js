@@ -4,10 +4,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { useWeb3Modal } from '@web3modal/wagmi/react';
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Set Preferences', href: '/preferences' },
+  { name: 'Send Assets', href: '/assets' },
+
 ]
 
 export default function HomePage({pageContents : Content}) {

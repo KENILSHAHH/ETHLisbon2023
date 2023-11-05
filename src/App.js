@@ -9,6 +9,7 @@ import HomePageContents from './Pages/HomePageContents';
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react';
 import { WagmiConfig } from 'wagmi';
 import { polygonZkEvmTestnet, gnosisChiado, neonDevnet } from 'wagmi/chains';
+import Create from './Pages/Preferences';
 const projectId = '33ca6721d9a9d08304e2063c7f72596a';
 const metadata = {
   name: 'Web3Modal',
@@ -17,8 +18,13 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886'],
 };
 const chains = [polygonZkEvmTestnet, gnosisChiado, neonDevnet];
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
-createWeb3Modal({ wagmiConfig, projectId, chains });
+const wagmiConfig = defaultWagmiConfig({
+  chains,
+  projectId,
+  metadata,
+
+});
+createWeb3Modal({ wagmiConfig, projectId, chains, themeMode: 'light' });
 // https://youtube.com/shorts/ESfDVsjJKtM?feature=share
 function App() {
   return (
@@ -28,6 +34,10 @@ function App() {
           <Route
             path="/"
             element={<HomePage pageContents={HomePageContents} />}
+          />
+          <Route
+            path="/preferences"
+            element={<HomePage pageContents={Create} />}
           />
         </Routes>
       </Router>
