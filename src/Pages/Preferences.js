@@ -171,7 +171,7 @@ export default function Create() {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = await provider.getSigner();
     const contract = new ethers.Contract(
-      '0x096AC235D1d7F1D60750384a3Ec80AE5801143a5',
+      '0x9684E0642EDad90Fc542c56ff2FC99FE435F1238',
       preferenceAbi,
       signer
     );

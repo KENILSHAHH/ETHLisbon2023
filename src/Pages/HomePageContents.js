@@ -14,7 +14,7 @@ function CreateVideo() {
     </div>
     <div className="text-center">
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-        ChroNFT
+        SecuredAssets
       </h1>
       <p className="mt-6 text-lg leading-8 text-gray-600">
        A plaotform where users can choose networks and assets that they want in a single click
