@@ -14,10 +14,8 @@ import SendAssets from './Pages/SendAssets';
 import sendNFTs from './Pages/SendAssets';
 const projectId = '33ca6721d9a9d08304e2063c7f72596a';
 const metadata = {
-  name: 'Web3Modal',
-  description: 'Web3Modal Example',
-  url: 'https://web3modal.com',
-  icons: ['https://avatars.githubusercontent.com/u/37784886'],
+  name: 'Web3Modal', ksd: "asd"
+  
 };
 const chains = [polygonZkEvmTestnet, gnosisChiado, neonDevnet, goerli];
 const wagmiConfig = defaultWagmiConfig({
